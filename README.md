@@ -1,5 +1,5 @@
 # Torch Inspector
-> A tool inspecting torch installation via basic computations.
+> A tool inspecting torch installation via basic CPU/GPU computations.
 
 ## Instructions
 Run the *inspector.lua* script with the following command.
