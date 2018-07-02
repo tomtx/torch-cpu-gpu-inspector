@@ -9,4 +9,5 @@ th inspector.lua
 
 ## Requirements
 * LuaJIT 2.1+
+* LuaSocket 3+
 * Torch 7+
