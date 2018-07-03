@@ -1,4 +1,5 @@
 require 'torch'
+require 'nn'
 require 'socket'
 
 function is_module_available(name)
@@ -31,6 +32,7 @@ function perform_cpu_computations()
     print("Matrix Product of CPU Tensors A & B")
     c = torch.mm(a, b)
     print(c)
+    print("... matrix operations has been completed")
     print("++++++++++++++++++++++++++++++")
 end
 
@@ -50,6 +52,7 @@ function perform_gpu_computations()
     print("Matrix Product of GPU Tensors A & B")
     c = torch.mm(a, b)
     print(c)
+    print("... matrix operations has been completed")
     print("++++++++++++++++++++++++++++++")
 end
 
@@ -68,13 +71,22 @@ function test_cpu_gpu_computations()
     end
 end
 
+function verify_torch_installation()
+    print("\n++++++++++++++++++++++++++++++")
+    print("... verifying Torch installation with its built-in test")
+    torch.test()
+    nn.test()
+    print("... verification of Torch installation has been completed")
+    print("++++++++++++++++++++++++++++++")
+end
+
 function main()
     print("++++++++++++++++++++++++++++++++++++++++++++++++++")
     print("+++ Simple CPU/GPU Computation Test with Torch +++")
     print("++++++++++++++++++++++++++++++++++++++++++++++++++")
     print("start:", os.date("%m/%d/%Y %I:%M %p"), socket.gettime()*1000, "ms")
     -- verify Torch installation
-    --verify_torch_installation()
+    verify_torch_installation()
     -- test CPU/GPU computations
     test_cpu_gpu_computations()
     print("\nend:", os.date("%m/%d/%Y %I:%M %p"), socket.gettime()*1000, "ms")
