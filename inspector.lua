@@ -73,7 +73,7 @@ end
 
 function verify_torch_installation()
     print("\n++++++++++++++++++++++++++++++")
-    print("... verifying Torch installation with its built-in test")
+    print("... verifying Torch installation with its built-in tests")
     torch.test()
     nn.test()
     print("... verification of Torch installation has been completed")
