@@ -30,9 +30,13 @@ function perform_cpu_computations()
     print(b)
     -- perform a matrix product of those two tensors
     print("Matrix Product of CPU Tensors A & B")
+    start_time = socket.gettime()
     c = torch.mm(a, b)
+    end_time = socket.gettime()
+    elapsed_time = end_time - start_time
     print(c)
-    print("... matrix operations has been completed")
+    print("... time to finish the workload: %f s" % elapsed_time)
+    print("\n... matrix operations has been completed")
     print("++++++++++++++++++++++++++++++")
 end
 
@@ -50,9 +54,13 @@ function perform_gpu_computations()
     print(b)
     -- perform a matrix product of those two tensors
     print("Matrix Product of GPU Tensors A & B")
+    start_time = socket.gettime()
     c = torch.mm(a, b)
+    end_time = socket.gettime()
+    elapsed_time = end_time - start_time
     print(c)
-    print("... matrix operations has been completed")
+    print("... time to finish the workload: %f s" % elapsed_time)
+    print("\n... matrix operations has been completed")
     print("++++++++++++++++++++++++++++++")
 end
 
