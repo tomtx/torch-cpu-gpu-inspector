@@ -8,6 +8,7 @@ th inspector.lua
 ```
 
 ## Requirements
+Install the following packages in your Lua environment.
 * LuaJIT 2.1+
 * LuaSocket 3+
 * nn
